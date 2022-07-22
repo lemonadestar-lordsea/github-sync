@@ -28,6 +28,7 @@ echo "BRANCHES=$BRANCH_MAPPING"
 
 git config --unset-all http."https://github.com/".extraheader || :
 
+ls -l
 echo "Resetting origin to: https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
 
