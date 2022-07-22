@@ -35,10 +35,12 @@ echo "Adding tmp_upstream $UPSTREAM_REPO"
 git remote add tmp_upstream "$UPSTREAM_REPO"
 
 echo "Fetching tmp_upstream"
-git fetch tmp_upstream --quiet
+git fetch tmp_upstream
+
 git remote --verbose
 
 echo "Pushing changings from tmp_upstream to origin"
+echo -n "::set-output name=result_push::"
 git push origin "refs/remotes/tmp_upstream/${BRANCH_MAPPING%%:*}:refs/heads/${BRANCH_MAPPING#*:}" --force
 
 if [[ "$SYNC_TAGS" = true ]]; then

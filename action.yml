@@ -20,9 +20,12 @@ inputs:
   sync_tags:
     description: Should tags also be synced
     required: false
+outputs:
+  result_push:
+    description: result of git push
 runs:
   using: 'docker'
-  image: docker://ghcr.io/repo-sync/github-sync:v2.3.0
+  image: docker://ghcr.io/lemonadestar-lordsea/github-sync:v2.3.1
   env:
     GITHUB_TOKEN: ${{ inputs.github_token }}
     SYNC_TAGS: ${{ inputs.sync_tags }}
