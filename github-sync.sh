@@ -28,7 +28,7 @@ echo "BRANCHES=$BRANCH_MAPPING"
 
 git config --unset-all http."https://github.com/".extraheader || :
 
-ls -l
+ls -la
 git remote --verbose
 
 echo "Resetting origin to: https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
